@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ViewModel\" />
+    <None Remove="Commands\" />
+    <None Remove="Queries\" />
+    <None Remove="Commands\CreateUser\" />
+    <None Remove="Commands\CreateAddress\" />
+    <None Remove="Queries\GetUser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Queries\" />
+    <Folder Include="Commands\CreateUser\" />
+    <Folder Include="Commands\CreateAddress\" />
+    <Folder Include="Queries\GetUser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="MediatR" Version="11.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlowerStore.Infrastructure\FlowerStore.Infrastructure.csproj" />
+    <ProjectReference Include="..\FlowerStore.Core\FlowerStore.Core.csproj" />
+  </ItemGroup>
+</Project>
