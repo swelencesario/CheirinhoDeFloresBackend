@@ -12,7 +12,8 @@
     <None Remove="Queries\" />
     <None Remove="Commands\CreateUser\" />
     <None Remove="Commands\CreateAddress\" />
-    <None Remove="Queries\GetUser\" />
+    <None Remove="Queries\Login\" />
+    <None Remove="Queries\GetUserById\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
@@ -20,7 +21,8 @@
     <Folder Include="Queries\" />
     <Folder Include="Commands\CreateUser\" />
     <Folder Include="Commands\CreateAddress\" />
-    <Folder Include="Queries\GetUser\" />
+    <Folder Include="Queries\Login\" />
+    <Folder Include="Queries\GetUserById\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />

@@ -19,14 +19,16 @@ namespace FlowerStore.Infrastructure.Persistence.Repository
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<User> GetUserById(int id)
-        {
-            return await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == id);
-        }
-
-        public async Task<User> GetUserByUserNameAndPassword(string username, string password)
+        public Task<User> GetUserById(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<User> GetUserByUsernameAndPassword(string username, string password)
+        {
+            return await _dbContext
+                .Users
+                .SingleOrDefaultAsync(u => u.UserName == username && u.Password == password);
         }
 
         public Task<List<User>> GetUsers()
