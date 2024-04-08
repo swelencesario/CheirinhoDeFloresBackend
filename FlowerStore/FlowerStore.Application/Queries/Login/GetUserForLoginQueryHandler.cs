@@ -6,18 +6,18 @@ using MediatR;
 
 namespace FlowerStore.Application.Queries.GetUser
 {
-    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserViewModel>
+    public class GetUserForLoginQueryHandler : IRequestHandler<GetUserForLoginQuery, UserViewModel>
     {
         private readonly IUser _userRepository;
 
-        public GetUserQueryHandler(IUser userRepository)
+        public GetUserForLoginQueryHandler(IUser userRepository)
         {
             _userRepository = userRepository;
         }
 
-        public async Task<UserViewModel> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        public async Task<UserViewModel> Handle(GetUserForLoginQuery request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUserById(request.Id);
+            var user = await _userRepository.GetUserByUsernameAndPassword(request.Username, request.Password);
 
             if (user == null)
             {

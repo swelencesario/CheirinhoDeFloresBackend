@@ -1,5 +1,4 @@
-﻿using System;
-using FlowerStore.Core.Entities;
+﻿using FlowerStore.Core.Entities;
 using FlowerStore.Core.IRepository;
 
 namespace FlowerStore.Infrastructure.Persistence.Repository

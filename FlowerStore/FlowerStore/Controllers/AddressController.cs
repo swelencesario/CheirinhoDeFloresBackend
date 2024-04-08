@@ -22,7 +22,7 @@ namespace FlowerStore.API.Controllers
         {
             var id = await _mediator.Send(command);
 
-            return Ok(command);
+            return Ok(id);
         }
     }
 }
