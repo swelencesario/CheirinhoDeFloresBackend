@@ -30,9 +30,9 @@ namespace FlowerStore.Infrastructure.Repository
             return await _dbContext.Flowers.SingleOrDefaultAsync(f => f.Id == id);
         }
 
-        public Task<List<Flower>> GetFlowers()
+        public async Task<List<Flower>> GetFlowers()
         {
-            throw new NotImplementedException();
+            return await _dbContext.Flowers.ToListAsync();
         }
     }
 }

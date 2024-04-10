@@ -31,7 +31,7 @@ internal class Program
         builder.Services.AddMediatR(typeof(Program));
         builder.Services.AddMediatR(typeof(CreateUserCommand));
         builder.Services.AddMediatR(typeof(CreateAddressCommand));
-        builder.Services.AddMediatR(typeof(GetUserForLoginQuery));
+        builder.Services.AddMediatR(typeof(LoginQuery));
 
         var app = builder.Build();
 
