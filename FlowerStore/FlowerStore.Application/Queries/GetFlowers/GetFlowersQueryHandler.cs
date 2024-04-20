@@ -19,7 +19,7 @@ namespace FlowerStore.Application.Queries.GetFlowers
             var flowers = await _flowerRepository.GetFlowers();
 
             var flowerViewModel = flowers
-                .Select(f => new FlowerViewModel(f.Description))
+                .Select(f => new FlowerViewModel(f.Id, f.Description, f.Price, f.ImageUrl))
                 .ToList();
 
             return flowerViewModel;

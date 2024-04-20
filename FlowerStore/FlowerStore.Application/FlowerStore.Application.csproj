@@ -15,6 +15,7 @@
     <None Remove="Queries\Login\" />
     <None Remove="Queries\GetUserById\" />
     <None Remove="Queries\GetFlowers\" />
+    <None Remove="Queries\GetFloweById\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
@@ -25,6 +26,7 @@
     <Folder Include="Queries\Login\" />
     <Folder Include="Queries\GetUserById\" />
     <Folder Include="Queries\GetFlowers\" />
+    <Folder Include="Queries\GetFloweById\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
