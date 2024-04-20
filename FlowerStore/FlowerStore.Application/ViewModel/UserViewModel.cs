@@ -2,6 +2,12 @@
 {
     public class UserViewModel
     {
+        public int Id { get; set; }
+        public string FullName { get; set; }
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+
         public UserViewModel(string fullName, string username, string email, string phoneNumber)
         {
             FullName = fullName;
@@ -19,11 +25,10 @@
             PhoneNumber = phoneNumber;
         }
 
-        public int Id { get; set; }
-        public string FullName { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public UserViewModel(int id)
+        {
+            Id = id;
+        }
     }
 }
 

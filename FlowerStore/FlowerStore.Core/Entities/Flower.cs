@@ -1,5 +1,4 @@
-﻿using System;
-using FlowerStore.Core;
+﻿using FlowerStore.Core;
 using FlowerStore.Core.Entities;
 
 namespace FlowerStore.Entities
