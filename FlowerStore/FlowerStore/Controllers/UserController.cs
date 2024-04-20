@@ -1,5 +1,6 @@
 ﻿using FlowerStore.Application.Commands;
 using FlowerStore.Application.Queries.GetUser;
+using FlowerStore.Application.Queries.GetUserById;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,7 @@ namespace FlowerStore.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var query = new GetUserQuery(id);
+            var query = new GetUserByIdQuery(id);
 
             var user = await _mediator.Send(query);
 
@@ -37,6 +38,19 @@ namespace FlowerStore.API.Controllers
         {
             var id = await _mediator.Send(command);
             return Ok(id);
+        }
+
+        [HttpGet("{username}/{password}")]
+        public async Task<IActionResult> Login(string username, string password)
+        {
+            var query = new LoginQuery(username, password);
+            var user = await _mediator.Send(query);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
         }
     }
 }

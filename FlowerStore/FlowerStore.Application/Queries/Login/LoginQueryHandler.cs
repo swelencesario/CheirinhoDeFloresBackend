@@ -1,21 +1,19 @@
-﻿using System;
-using FlowerStore.Application.ViewModel;
+﻿using FlowerStore.Application.ViewModel;
 using FlowerStore.Core.IRepository;
-using FlowerStore.Infrastructure.Persistence.Repository;
 using MediatR;
 
 namespace FlowerStore.Application.Queries.GetUser
 {
-    public class GetUserForLoginQueryHandler : IRequestHandler<GetUserForLoginQuery, UserViewModel>
+    public class LoginQueryHandler : IRequestHandler<LoginQuery, UserViewModel>
     {
         private readonly IUser _userRepository;
 
-        public GetUserForLoginQueryHandler(IUser userRepository)
+        public LoginQueryHandler(IUser userRepository)
         {
             _userRepository = userRepository;
         }
 
-        public async Task<UserViewModel> Handle(GetUserForLoginQuery request, CancellationToken cancellationToken)
+        public async Task<UserViewModel> Handle(LoginQuery request, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetUserByUsernameAndPassword(request.Username, request.Password);
 
