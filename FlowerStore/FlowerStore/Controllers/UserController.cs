@@ -50,7 +50,7 @@ namespace FlowerStore.API.Controllers
             {
                 return NotFound();
             }
-            return Ok(user);
+            return Ok(user.Id);
         }
     }
 }

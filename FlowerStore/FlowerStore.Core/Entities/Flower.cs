@@ -9,7 +9,7 @@ namespace FlowerStore.Entities
         public double Price { get; set; }
         public string ImageUrl { get; set; }
         public int CategoryId { get; private set; }
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
 
         public Flower(string description, double price, string imageUrl, int categoryId)
         {
