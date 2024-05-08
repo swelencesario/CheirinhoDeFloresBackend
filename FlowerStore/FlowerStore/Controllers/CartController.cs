@@ -1,5 +1,6 @@
 
 using FlowerStore.Application.Commands.CreateCart;
+using FlowerStore.Application.Queries.GetCartProducts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,15 @@ namespace FlowerStore.Controllers
         public CartController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCartProducts(int userId)
+        {
+            var getProducts = new GetCartProductsQuery(userId);
+            var products = await _mediator.Send(getProducts);
+
+            return Ok(products);
         }
 
         [HttpPost]

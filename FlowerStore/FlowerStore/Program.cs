@@ -7,6 +7,7 @@ using FlowerStore.Infrastructure.Persistence.Repository;
 using FlowerStore.Application.Commands;
 using FlowerStore.Application.Commands.CreateAddress;
 using FlowerStore.Application.Queries.GetUser;
+using FlowerStore.Application.Queries.GetCartProducts;
 
 internal class Program
 {
@@ -21,6 +22,7 @@ internal class Program
         builder.Services.AddScoped<IFlower, FlowerRepository>();
         builder.Services.AddScoped<IUser, UserRepository>();
         builder.Services.AddScoped<IAddress, AddressRepository>();
+        builder.Services.AddScoped<ICart, CartRepository>();
 
         // Add services to the container.
 
@@ -32,6 +34,7 @@ internal class Program
         builder.Services.AddMediatR(typeof(CreateUserCommand));
         builder.Services.AddMediatR(typeof(CreateAddressCommand));
         builder.Services.AddMediatR(typeof(LoginQuery));
+        builder.Services.AddMediatR(typeof(GetCartProductsQuery));
 
         var app = builder.Build();
 

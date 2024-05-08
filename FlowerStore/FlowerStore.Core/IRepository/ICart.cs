@@ -7,7 +7,7 @@ namespace FlowerStore.Core.IRepository
 {
     public interface ICart
     {
-        Task<List<Cart>> GetCartProducts();
+        Task<List<Cart>> GetCartProducts(int userId);
         Task AddAsync(Cart cart);
     }
 }
