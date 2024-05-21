@@ -22,9 +22,10 @@ namespace FlowerStore.Infrastructure.Persistence.Repository
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<Cart>> GetCartProducts()
+        public async Task<List<Cart>> GetCartProducts(int userId)
         {
-            return await _dbContext.Cart.ToListAsync();
+            return await _dbContext.Cart.Where(p => p.UserId == userId).ToListAsync();
+        
         }
     }
 }

@@ -15,7 +15,7 @@ namespace FlowerStore.Application.Commands.CreateCart
 
         public async Task<int> Handle(CreateCartCommand request, CancellationToken cancellationToken)
         {
-            var cart = new Cart(request.UserId, request.ProductId, request.Quantity, request.TotalPrice);
+            var cart = new Cart(request.UserId, request.ProductId,request.ProductName, request.Url, request.Quantity, request.TotalPrice, request.UnitPrice);
 
             await _dbContext.Cart.AddAsync(cart);
             await _dbContext.SaveChangesAsync();

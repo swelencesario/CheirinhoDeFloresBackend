@@ -16,7 +16,7 @@ namespace FlowerStore.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{userId}")]
         public async Task<IActionResult> GetCartProducts(int userId)
         {
             var getProducts = new GetCartProductsQuery(userId);

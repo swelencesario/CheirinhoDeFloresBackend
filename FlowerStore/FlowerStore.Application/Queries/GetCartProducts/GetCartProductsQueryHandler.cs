@@ -18,9 +18,9 @@ namespace FlowerStore.Application.Queries.GetCartProducts
         public async Task<List<CartViewModel>> Handle(GetCartProductsQuery request, CancellationToken cancellationToken)
         {
             var cartProducts = await _cartRepository.GetCartProducts(request.UserId);
-
+            
             var cartViewModel = cartProducts
-                .Select(p => new CartViewModel(p.UserId, p.ProductId, p.TotalPrice, p.Quantity))
+                .Select(p => new CartViewModel(p.UserId, p.ProductId,p.ProductName, p.Url, p.TotalPrice, p.Quantity, p.UnitPrice))
                 .ToList();
 
             return cartViewModel;
